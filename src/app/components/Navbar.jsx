@@ -7,7 +7,7 @@ import React from 'react';
 const navLinks = [
     { id: 1, path: "/", pathName: "Home" },
     { id: 2, path: "/products", pathName: "Products" },
-    { id: 3, path: "/dashboard", pathName: "Dashboard" },
+    { id: 3, path: "/dashboard/addproduct", pathName: "Add Product" },
 ]
 
 const Navbar = () => {

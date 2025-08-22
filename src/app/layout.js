@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
+import NextAuthProvider from "@/Providers/NextAuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,22 +22,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  
+
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextAuthProvider>
+          <Toaster />
+          <Navbar />
 
-        <Navbar/>
+          <main className="container mx-auto min-h-screen">
+            {children}
+          </main>
 
-
-        <main className="h-screen place-items-center place-content-center">
-          {children}
-        </main>
-
-        <footer className="text-center bg-gray-700 py-10">Awesome Next.js Project</footer>
+          <Footer />
+        </NextAuthProvider>
 
 
       </body>

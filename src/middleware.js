@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server'
-
+ 
 // This function can be marked `async` if using `await` inside
 export function middleware(request) {
-    // const isServices
-    // console.log(request.nextUrl.pathname.startsWith("/dashboard/addproduct"))
-    return NextResponse.next()
+  return NextResponse.redirect(new URL('/dashboard/addproduct', request.url))
 }
-
-// See "Matching Paths" below to learn more
-// export const config = {
-//     matcher: '/dashboard/addproduct',
-// }
+ 
+export const config = {
+  matcher: '/dashboard',
+}
